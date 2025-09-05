@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class InputController : MonoBehaviour
 {
+    private static InputController instance;
+
     [SerializeField] private PlayerInput _playerInput;
 
     private InputAction move;
@@ -24,9 +26,12 @@ public class InputController : MonoBehaviour
 
     private Rigidbody2D playerRB2D;
 
+    public static InputController Instance { get => instance; set => instance = value; }
 
     private void Start()
     {
+        instance = this;
+
         _playerInput.currentActionMap.Enable();
         move = _playerInput.currentActionMap.FindAction("Move");
         shoot = _playerInput.currentActionMap.FindAction("Shoot");
@@ -71,6 +76,7 @@ public class InputController : MonoBehaviour
     private void Shoot_started(InputAction.CallbackContext obj)
     {
         isShooting = true;
+        playerRB2D.GetComponent<Animator>().SetBool("isShooting", true);
         if (!alreadyShooting)
             StartCoroutine(Shooting());
     }
@@ -86,12 +92,18 @@ public class InputController : MonoBehaviour
     }
     private void Shoot()
     {
+        if (playerRB2D.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            playerRB2D.GetComponent<Animator>().Play("GrabGun");
+    }
+    public void SpawnProjectile()
+    {
         GameObject newProjectile = Instantiate(_projectilePrefab, new Vector2(playerRB2D.transform.position.x + 0.8f, playerRB2D.transform.position.y), Quaternion.identity);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(playerRB2D.transform.right * _projectileSpeed, ForceMode2D.Impulse);
     }
     private void Shoot_canceled(InputAction.CallbackContext obj)
     {
         isShooting = false;
+        playerRB2D.GetComponent<Animator>().SetBool("isShooting", false);
     }
     private void Reset_performed(InputAction.CallbackContext obj)
     {

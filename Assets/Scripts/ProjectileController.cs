@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
@@ -8,6 +9,8 @@ public class ProjectileController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Animator>().Play("Explode");
         if (collision.GetComponent<EntityController>() != null)
         {
             EntityController collisionEC = collision.GetComponent<EntityController>();
@@ -18,7 +21,13 @@ public class ProjectileController : MonoBehaviour
                 GameController.Instance.UpdateScore(1);
             }
         }
-       Destroy(gameObject);
+        GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+       StartCoroutine(DestroyAfterAnimation());
+    }
+    IEnumerator DestroyAfterAnimation()
+    {
+        yield return new WaitForSeconds(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        Destroy(gameObject);
     }
     private void Despawn()
     {
