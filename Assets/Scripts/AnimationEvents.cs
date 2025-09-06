@@ -12,7 +12,6 @@ public class AnimationEvents : MonoBehaviour
     }
     public void ShowSmoke()
     {
-        Debug.Log("Smoke");
         GameController.Instance.PlayerObject.transform.GetChild(0).GetComponent<Animator>().Play("Smoke");
     }
     public void PlaySoundEffect(AudioClip soundEffect)

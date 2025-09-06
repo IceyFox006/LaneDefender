@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject _playerObject;
     [SerializeField] private AudioClip _deathSE;
+    private int currentPlayerHP;
 
     [Header("UI")]
     [SerializeField] private ScoreTrackerSO _scoreTrackerSO;
@@ -23,10 +24,12 @@ public class GameController : MonoBehaviour
     public ScoreTrackerSO ScoreTrackerSO { get => _scoreTrackerSO; set => _scoreTrackerSO = value; }
     public GameObject GameOverCanvas { get => _gameOverCanvas; set => _gameOverCanvas = value; }
     public AudioClip DeathSE { get => _deathSE; set => _deathSE = value; }
+    public int CurrentPlayerHP { get => currentPlayerHP; set => currentPlayerHP = value; }
 
     private void Awake()
     {
         instance = this;
+        currentPlayerHP = _playerObject.GetComponent<EntityController>().EntityType.MaxHP;
         _scoreTrackerSO.Scores.Add(0);
         UpdateScore(0);
         _highScoreText.text = _scoreTrackerSO.HighScore.ToString();
@@ -45,8 +48,9 @@ public class GameController : MonoBehaviour
             }
         }
     }
-    public void UpdatePlayerHPUI(int currentPlayerHP, int totalPlayerHP)
+    public void UpdatePlayerHPUI(int totalPlayerHP)
     {
+        Debug.Log("UI updated");
         _playerHPText.text = currentPlayerHP.ToString() + "/" + totalPlayerHP.ToString();
         _playerHPBar.fillAmount = (float)currentPlayerHP / totalPlayerHP;
     }

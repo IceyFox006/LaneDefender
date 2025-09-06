@@ -25,8 +25,7 @@ public class EntityController : MonoBehaviour
             if (_entityType.Alligence == Enums.EntityAlligence.Player && collisionEC.EntityType.Alligence == Enums.EntityAlligence.Enemy)
             {
                 DamageEntity();
-                GameController.Instance.PlayerObject.GetComponent<Animator>().Play("DamageTaken");
-                GameController.Instance.UpdatePlayerHPUI(currentHP, _entityType.MaxHP);
+                DamagePlayer();
                 collisionEC.KillEntity();
             }
         }
@@ -43,8 +42,6 @@ public class EntityController : MonoBehaviour
     public IEnumerator StunWait()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("HERE");
-        //entityRB2D.linearVelocity = -transform.right * _entityType.Speed;
         StartMovement(transform);
     }
     public void DamageEntity()
@@ -61,6 +58,14 @@ public class EntityController : MonoBehaviour
             }
             StartCoroutine(KillDelay());
         }
+    }
+    public void DamagePlayer()
+    {
+        GameController.Instance.CurrentPlayerHP -= 1;
+        GameController.Instance.PlayerObject.GetComponent<Animator>().Play("DamageTaken");
+        GameController.Instance.UpdatePlayerHPUI(_entityType.MaxHP);
+        if (GameController.Instance.CurrentPlayerHP <= 0)
+            KillPlayer();
     }
     IEnumerator KillDelay()
     {
