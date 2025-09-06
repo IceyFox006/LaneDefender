@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 75
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -303,7 +303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -927,7 +927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1066,7 +1066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1587,7 +1587,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -3653,13 +3653,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4375, y: 1.625}
+    oldSize: {x: 1.5333333, y: 1.7333333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.7}
   m_EdgeRadius: 0
 --- !u!95 &598892243
 Animator:
@@ -4600,8 +4600,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80, y: 40}
+  m_AnchoredPosition: {x: -15, y: 15}
+  m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &892044454
 MonoBehaviour:
@@ -4866,7 +4866,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 280, y: 200}
+  m_SizeDelta: {x: 380, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937299582
 MonoBehaviour:
@@ -4888,7 +4888,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 150, y: 100}
   m_Spacing: {x: 64, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -5248,7 +5248,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -4
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -8109,7 +8109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8280,7 +8280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -8316,7 +8316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 214
+      value: 289
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8340,8 +8340,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9184181644489074979, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_text
-      value: "Marlow Greenan\n\n\nMarlow Greenan\n\n\nCall to Adventure by Kevin
-        MacLeod \n\n\nRPG Essentials Sound Effects by Leohpaz"
+      value: "Marlow Greenan\n\nMarlow Greenan\n\nCall to Adventure by Kevin MacLeod
+        \n\nRPG Essentials Sound Effects by Leohpaz"
       objectReference: {fileID: 0}
     - target: {fileID: 9184181644489074979, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_fontSize
@@ -8514,7 +8514,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -9547,7 +9547,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0.03333336, y: 0.03333336, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -11071,7 +11071,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 128, y: 16}
+  m_SizeDelta: {x: 128, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463581333
 MonoBehaviour:
@@ -11146,7 +11146,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 250}
+  m_SizeDelta: {x: 400, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1470949534
 MonoBehaviour:
@@ -11256,7 +11256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2477687447155896040, guid: 3e31b1b7d864a1d41b56c0b9bc6bcb4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11851,7 +11851,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 128, y: 16}
+  m_SizeDelta: {x: 128, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1985268744
 MonoBehaviour:
