@@ -25,6 +25,7 @@ public class EntityController : MonoBehaviour
             if (_entityType.Alligence == Enums.EntityAlligence.Player && collisionEC.EntityType.Alligence == Enums.EntityAlligence.Enemy)
             {
                 DamageEntity();
+                GameController.Instance.PlayerObject.GetComponent<Animator>().Play("DamageTaken");
                 GameController.Instance.UpdatePlayerHPUI(currentHP, _entityType.MaxHP);
                 collisionEC.KillEntity();
             }
@@ -49,13 +50,26 @@ public class EntityController : MonoBehaviour
     public void DamageEntity()
     {
         currentHP -= 1;
+        if (GetComponent<Animator>() != null)
+            GetComponent<Animator>().Play("DamageTaken");
         if (currentHP <= 0)
         {
-            if (_entityType.Alligence == Enums.EntityAlligence.Player)
-                KillPlayer();
-            else
-                KillEntity();
+            if (GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().clip = GameController.Instance.DeathSE;
+                GetComponent<AudioSource>().Play();
+            }
+            StartCoroutine(KillDelay());
         }
+    }
+    IEnumerator KillDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        if (_entityType.Alligence == Enums.EntityAlligence.Player)
+            KillPlayer();
+        else
+            KillEntity();
     }
     private void KillPlayer()
     {

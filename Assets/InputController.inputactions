@@ -168,7 +168,7 @@
                 {
                     "name": "",
                     "id": "04c8eb2a-dccc-4161-b402-548cfda766b9",
-                    "path": "<Keyboard>/backspace",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -179,7 +179,7 @@
                 {
                     "name": "",
                     "id": "0e8f8350-990a-4963-851d-49395def3944",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

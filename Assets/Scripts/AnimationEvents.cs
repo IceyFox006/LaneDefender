@@ -10,4 +10,17 @@ public class AnimationEvents : MonoBehaviour
     {
         InputController.Instance.SpawnProjectile();
     }
+    public void ShowSmoke()
+    {
+        Debug.Log("Smoke");
+        GameController.Instance.PlayerObject.transform.GetChild(0).GetComponent<Animator>().Play("Smoke");
+    }
+    public void PlaySoundEffect(AudioClip soundEffect)
+    {
+        if (GetComponent<AudioSource>() != null)
+        {
+            GetComponent <AudioSource>().clip = soundEffect;
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }

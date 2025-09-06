@@ -97,7 +97,7 @@ public class InputController : MonoBehaviour
     }
     public void SpawnProjectile()
     {
-        GameObject newProjectile = Instantiate(_projectilePrefab, new Vector2(playerRB2D.transform.position.x + 0.8f, playerRB2D.transform.position.y), Quaternion.identity);
+        GameObject newProjectile = Instantiate(_projectilePrefab, new Vector2(playerRB2D.transform.position.x + 0.8f, playerRB2D.transform.position.y - 0.4f), Quaternion.identity);
         newProjectile.GetComponent<Rigidbody2D>().AddForce(playerRB2D.transform.right * _projectileSpeed, ForceMode2D.Impulse);
     }
     private void Shoot_canceled(InputAction.CallbackContext obj)
